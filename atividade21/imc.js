@@ -16,7 +16,7 @@ setInterval(function () {
    
     let altura = distancia / 100; // Convertendo para metros
     let peso = 100
-    let imc = peso / (altura * altura)     
+    let imc = peso / (altura ** 2);
    // let imcc = peso/ Math.pow(altura, 2)
 
    // let imcc = peso/ Math.pow(altura, 2)
