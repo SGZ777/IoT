@@ -1,0 +1,13 @@
+let brasil = {
+  width : 41, height : 64, bpp : 1,
+  buffer : atob("AAAAAAAAAAQAAAAAAwAAAAADwIAAAYHA4AAB4IBwAABgADgAAAAAAAAAAAAAAAQAI8AEB4Bx+A+BgPj+A4FA+H/BQAHwOfAAAfAcfAAB8A4PgAPwBwPgD+ADgP8H4AHAH4HAAOAHgOAf/AOAOAf8AcAcAf4A4A4AfgDgBxg/BHADjh+GOAH/3+8AAP/EY4AAf+6HwAAA5xn/gAB7of/AADxG/+AAH38ecAOMH4Y4AcQPwZwA4AfgDgBwB/gHADgH/gOAHAf/AcAOAHAA4AOAOABwAcAcADgA4A4AOAA4BwA8AB4DgDwAB8HAfAAB/OD8AAA/8fwAAAf4+AAAAPxgAAAAHgAAAAADAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAPnww8kAZtjjBIAyZFmCQB8+JHkgDN4+BJAGbZmCTAPmSF8ngAAAAAAA==")
+}
+
+I2C1.setup()
+let oled = require("SSD1306").connect(I2C1)
+
+setInterval (function(){
+    oled.clear()
+    oled.drawImage(brasil, (128 - brasil.width) / 2, (64 - brasil.height) / 2)
+    oled.flip()
+}, 1000)
